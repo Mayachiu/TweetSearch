@@ -25,7 +25,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         lbl.text = "初期"
         
-        createDatePicker()
+        createSinceDatePicker()
+        createUntilDatePicker()
         // Do any additional setup after loading the view.
     }
     @IBAction func atmarkACT(_ sender: Any) {
@@ -76,41 +77,41 @@ class ViewController: UIViewController {
         UIApplication.shared.open(url!)
     }
     
-    func createDatePicker(){
+    func createSinceDatePicker(){
 
           // DatePickerModeをDate(日付)に設定
           sinceDatePicker.datePickerMode = .date
-        untilDatePicker.datePickerMode = .date
+        
 
           // DatePickerを日本語化
           sinceDatePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
-        untilDatePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
+        
          
          sinceDatePicker.preferredDatePickerStyle = .wheels
-        untilDatePicker.preferredDatePickerStyle = .wheels
+        
 
           // textFieldのinputViewにdatepickerを設定
           sinceTextField.inputView = sinceDatePicker
-        untilTextField.inputView = untilDatePicker
+        
 
           // UIToolbarを設定
           let toolbar = UIToolbar()
           toolbar.sizeToFit()
 
           // Doneボタンを設定(押下時doneClickedが起動)
-         let doneButton = UIBarButtonItem(title: "OK", style: .done, target: nil, action: #selector(doneClicked))
+         let doneButton = UIBarButtonItem(title: "OK", style: .done, target: nil, action: #selector(sinceDoneClicked))
 
           // Doneボタンを追加
          toolbar.setItems([doneButton], animated: true)
 
           // FieldにToolbarを追加
           sinceTextField.inputAccessoryView = toolbar
-        untilTextField.inputAccessoryView = toolbar
+        
       }
 
-      @objc func doneClicked(){
+      @objc func sinceDoneClicked(){
           let sinceDateFormatter = DateFormatter()
-        let untilDateFormatter = DateFormatter()
+        
 
           // 持ってくるデータのフォーマットを設定
           sinceDateFormatter.dateStyle = .medium
@@ -118,13 +119,60 @@ class ViewController: UIViewController {
          sinceDateFormatter.locale    = NSLocale(localeIdentifier: "ja_JP") as Locale?
           sinceDateFormatter.dateStyle = DateFormatter.Style.medium
         
+          // textFieldに選択した日付を代入
+          sinceTextField.text = sinceDateFormatter.string(from: sinceDatePicker.date)
+
+          // キーボードを閉じる
+          self.view.endEditing(true)
+      }
+
+    
+    
+    
+    func createUntilDatePicker(){
+
+          // DatePickerModeをDate(日付)に設定
+          
+        untilDatePicker.datePickerMode = .date
+
+          // DatePickerを日本語化
+          
+        untilDatePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
+         
+         
+        untilDatePicker.preferredDatePickerStyle = .wheels
+
+          // textFieldのinputViewにdatepickerを設定
+         
+        untilTextField.inputView = untilDatePicker
+
+          // UIToolbarを設定
+          let toolbar = UIToolbar()
+          toolbar.sizeToFit()
+
+          // Doneボタンを設定(押下時doneClickedが起動)
+         let doneButton = UIBarButtonItem(title: "OK", style: .done, target: nil, action: #selector(untilDoneClicked))
+
+          // Doneボタンを追加
+         toolbar.setItems([doneButton], animated: true)
+
+          // FieldにToolbarを追加
+        untilTextField.inputAccessoryView = toolbar
+      }
+
+      @objc func untilDoneClicked(){
+          
+        let untilDateFormatter = DateFormatter()
+
+          // 持ってくるデータのフォーマットを設定
+          
         untilDateFormatter.dateStyle = .medium
         untilDateFormatter.timeStyle = .none
        untilDateFormatter.locale    = NSLocale(localeIdentifier: "ja_JP") as Locale?
         untilDateFormatter.dateStyle = DateFormatter.Style.medium
 
           // textFieldに選択した日付を代入
-          sinceTextField.text = sinceDateFormatter.string(from: sinceDatePicker.date)
+          
         untilTextField.text = untilDateFormatter.string(from: untilDatePicker.date)
 
           // キーボードを閉じる
