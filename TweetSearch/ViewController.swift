@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var swich: UISwitch!
     @IBOutlet weak var atmarkTextField: UITextField!
     @IBOutlet weak var sinceTextField: UITextField!
+    @IBOutlet weak var untilTextField: UITextField!
     
     let datePicker = UIDatePicker()
     
@@ -46,15 +47,20 @@ class ViewController: UIViewController {
     
     @IBAction func Goaction(_ sender: Any) {
         var urlArray: [String] = [url1]
+        
         let atmarkURL = "%40\(atmarkTextField.text!)"
+        
         let sinceText = sinceTextField.text
         let sinceArray = sinceText?.split(separator: "/")
-        print(sinceArray!)
         let sinceURL = "since%3A\(sinceArray![0])-\(sinceArray![1])-\(sinceArray![2])"
-        print(sinceURL)
+        
+        let untilText = untilTextField.text
+        let untilArray = untilText?.split(separator: "/")
+        let untilURL = "until%3A\(untilArray![0])-\(untilArray![1])-\(untilArray![2])"
         
         urlArray.append(atmarkURL)
         urlArray.append(sinceURL)
+        urlArray.append(untilURL)
         urlArray.append(url2)
         print(urlArray)
         
