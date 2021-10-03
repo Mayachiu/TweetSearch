@@ -43,15 +43,28 @@ class ViewController: UIViewController {
             atmarkTextField.isEnabled = false
         }
     }
+    
     @IBAction func Goaction(_ sender: Any) {
-        let at = "%40\(atmarkTextField.text!)"
+        var urlArray: [String] = [url1]
+        let atmarkURL = "%40\(atmarkTextField.text!)"
         let sinceText = sinceTextField.text
         let sinceArray = sinceText?.split(separator: "/")
-        print(sinceArray)
+        print(sinceArray!)
         let sinceURL = "since%3A\(sinceArray![0])-\(sinceArray![1])-\(sinceArray![2])"
         print(sinceURL)
         
-        let url = URL(string: "\(url1)\(at)%20\(sinceURL)\(url2)")
+        urlArray.append(atmarkURL)
+        urlArray.append(sinceURL)
+        urlArray.append(url2)
+        print(urlArray)
+        
+        let joinURL: String = urlArray.joined(separator: "%20")
+        print(joinURL)
+        
+        
+        let url = URL(string: joinURL)
+        
+        print(url!)
         
         UIApplication.shared.open(url!)
     }
