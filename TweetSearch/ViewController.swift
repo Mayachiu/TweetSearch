@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var swich: UISwitch!
-    @IBOutlet weak var atmark: UITextField!
+    @IBOutlet weak var atmarkTextField: UITextField!
     @IBOutlet weak var sinceTextField: UITextField!
     
     let datePicker = UIDatePicker()
@@ -37,20 +37,14 @@ class ViewController: UIViewController {
     @IBAction func act(_ sender: Any) {
         if swich.isOn == true {
             lbl.text = "ONです"
-            atmark.isEnabled = true
+            atmarkTextField.isEnabled = true
         } else {
             lbl.text = "OFFです"
-            atmark.isEnabled = false
+            atmarkTextField.isEnabled = false
         }
     }
     @IBAction func Goaction(_ sender: Any) {
-        let at = "%40\(atmark.text!)"
-       
-     
-        
-        
-//        print(at)
-//        print(url!)
+        let at = "%40\(atmarkTextField.text!)"
         let sinceText = sinceTextField.text
         let sinceArray = sinceText?.split(separator: "/")
         print(sinceArray)

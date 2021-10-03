@@ -70,7 +70,7 @@
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                     </view>
                     <connections>
-                        <outlet property="atmark" destination="hUd-Be-Q1g" id="dRJ-9L-PWC"/>
+                        <outlet property="atmarkTextField" destination="hUd-Be-Q1g" id="dRJ-9L-PWC"/>
                         <outlet property="lbl" destination="vtO-5p-dNJ" id="LJA-bC-vM2"/>
                         <outlet property="sinceTextField" destination="Hx2-EV-loI" id="zWR-fk-hBc"/>
                         <outlet property="swich" destination="M8P-xN-nQX" id="f3J-7H-sa0"/>
