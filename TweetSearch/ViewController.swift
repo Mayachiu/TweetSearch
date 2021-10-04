@@ -10,6 +10,8 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var atmarkSwitch: UISwitch!
+    @IBOutlet weak var fromSwitch: UISwitch!
+    
     @IBOutlet weak var atmarkTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var sinceTextField: UITextField!
@@ -25,6 +27,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         atmarkTextField.delegate = self
+        fromTextField.delegate = self
         lbl.text = "初期"
         
         createSinceDatePicker()
@@ -32,6 +35,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+           self.view.endEditing(true)
+       }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           // キーボードを閉じる
+           textField.resignFirstResponder()
+           
+           return true
+       }
+    
+    //    override func didReceiveMemoryWarning() {
+//           super.didReceiveMemoryWarning()
+//       }
+//    
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//          // キーボードを閉じる
+//          textField.resignFirstResponder()
+//          return true
+//      }
 
     @IBAction func act(_ sender: Any) {
         if atmarkSwitch.isOn == true {            lbl.text = "ONです"
@@ -41,6 +65,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
             atmarkTextField.isEnabled = false
         }
     }
+    
+    @IBAction func act2(_ sender: Any) {
+        if fromSwitch.isOn == true {
+            fromTextField.isEnabled = true
+        } else {
+            lbl.text = "OFFです"
+            fromTextField.isEnabled = false
+        }
+    }
+    
     
     @IBAction func Goaction(_ sender: Any) {
         var urlArray: [String] = [url1]
@@ -57,11 +91,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        let untilArray = untilText?.split(separator: "/")
 //        let untilURL = "until%3A\(untilArray![0])-\(untilArray![1])-\(untilArray![2])"
         
-        urlArray.append(fromURL)
+        
 //        urlArray.append(atmarkURL)
+        urlArray.append(fromURL)
 //        urlArray.append(sinceURL)
 //        urlArray.append(untilURL)
-        urlArray.append(url2)
+//        urlArray.append(url2)
         print(urlArray)
         
         let joinURL: String = urlArray.joined(separator: "%20")

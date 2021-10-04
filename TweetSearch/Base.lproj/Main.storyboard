@@ -16,24 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@以降を入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUd-Be-Q1g">
-                                <rect key="frame" x="105" y="91" width="164" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="atmarkACT:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="cWh-Vf-5vT"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR0-S2-RvY">
-                                <rect key="frame" x="179" y="523" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.8392156959" green="0.99607843159999998" blue="0.76470589639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="Goaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0LE-Z9-qRs"/>
-                                </connections>
-                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M8P-xN-nQX">
                                 <rect key="frame" x="37" y="94" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -65,18 +47,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@以降を入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xSA-bW-zeO">
-                                <rect key="frame" x="105" y="150" width="164" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="atmarkACT:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="JWE-tR-HAy"/>
-                                </connections>
-                            </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2gT-QF-86a">
                                 <rect key="frame" x="35" y="152" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="act2:" destination="BYZ-38-t0r" eventType="valueChanged" id="yeG-Ed-26s"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQ9-Ki-Wmk">
                                 <rect key="frame" x="37" y="227" width="49" height="31"/>
@@ -95,14 +71,36 @@
                                     <action selector="atmarkACT:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="8xE-fp-4hy"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR0-S2-RvY">
+                                <rect key="frame" x="313" y="293" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.8392156959" green="0.99607843159999998" blue="0.76470589639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Goaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0LE-Z9-qRs"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pOg-cM-EAN">
+                                <rect key="frame" x="105" y="154" width="164" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yyV-QC-KHL">
+                                <rect key="frame" x="105" y="94" width="164" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                     </view>
                     <connections>
                         <outlet property="atmarkSwitch" destination="M8P-xN-nQX" id="f3J-7H-sa0"/>
-                        <outlet property="atmarkTextField" destination="hUd-Be-Q1g" id="dRJ-9L-PWC"/>
-                        <outlet property="fromTextField" destination="xSA-bW-zeO" id="utC-sL-Q8U"/>
+                        <outlet property="atmarkTextField" destination="yyV-QC-KHL" id="ND7-sW-tyA"/>
+                        <outlet property="fromSwitch" destination="2gT-QF-86a" id="pTd-Wh-qN7"/>
+                        <outlet property="fromTextField" destination="pOg-cM-EAN" id="WMw-aR-tbE"/>
                         <outlet property="lbl" destination="vtO-5p-dNJ" id="LJA-bC-vM2"/>
                         <outlet property="sinceTextField" destination="Hx2-EV-loI" id="zWR-fk-hBc"/>
                         <outlet property="untilTextField" destination="8Fk-la-Vno" id="WJt-ax-TEs"/>
@@ -110,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-364" y="99"/>
+            <point key="canvasLocation" x="-364" y="98.50074962518741"/>
         </scene>
     </scenes>
     <resources>
