@@ -105,6 +105,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fch-qj-o8n">
+                                <rect key="frame" x="37" y="434" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="exclusionSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="gP8-g7-BcA"/>
+                                </connections>
+                            </switch>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="-" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3P-TI-PB7">
+                                <rect key="frame" x="105" y="431" width="156" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -112,6 +125,8 @@
                     <connections>
                         <outlet property="atmarkSwitch" destination="M8P-xN-nQX" id="f3J-7H-sa0"/>
                         <outlet property="atmarkTextField" destination="yyV-QC-KHL" id="ND7-sW-tyA"/>
+                        <outlet property="exclusionSwitch" destination="fch-qj-o8n" id="0d4-Pc-eM3"/>
+                        <outlet property="exclusionTextField" destination="K3P-TI-PB7" id="szF-hI-IGY"/>
                         <outlet property="fromSwitch" destination="2gT-QF-86a" id="pTd-Wh-qN7"/>
                         <outlet property="fromTextField" destination="pOg-cM-EAN" id="WMw-aR-tbE"/>
                         <outlet property="hashtagSwitch" destination="3Iu-Gi-hTu" id="bGG-Ng-Rmy"/>
@@ -125,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-518" y="64"/>
+            <point key="canvasLocation" x="-287.19999999999999" y="79.610194902548727"/>
         </scene>
     </scenes>
     <resources>

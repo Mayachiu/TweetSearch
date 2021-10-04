@@ -14,12 +14,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var sinceSwitch: UISwitch!
     @IBOutlet weak var untilSwitch: UISwitch!
     @IBOutlet weak var hashtagSwitch: UISwitch!
+    @IBOutlet weak var exclusionSwitch: UISwitch!
     
     @IBOutlet weak var atmarkTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var sinceTextField: UITextField!
     @IBOutlet weak var untilTextField: UITextField!
     @IBOutlet weak var hashtagTextField: UITextField!
+    @IBOutlet weak var exclusionTextField: UITextField!
     
     let sinceDatePicker = UIDatePicker()
     let untilDatePicker = UIDatePicker()
@@ -42,6 +44,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        sinceTextField.delegate = self
 //        untilTextField.delegate = self
         hashtagTextField.delegate = self
+        exclusionTextField.delegate = self
         lbl.text = "初期"
         
         createSinceDatePicker()
@@ -130,6 +133,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func exclusionSwitchAction(_ sender: Any) {
+        if exclusionSwitch.isOn == true {
+            exclusionTextField.isEnabled = true
+        } else {
+            exclusionTextField.isEnabled = false
+            exclusionTextField.text = ""
+        }
+    }
     
     
     
@@ -175,6 +186,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if hashtagTextField.text?.count != 0 {
                 let hashtagURL = "%23\(hashtagTextField.text!)"
                 urlArray.append(hashtagURL)
+            }
+        }
+        
+        if exclusionSwitch.isOn == true {
+            if exclusionTextField.text?.count != 0 {
+                let exclusionURL = "-\(exclusionTextField.text!)"
+                urlArray.append(exclusionURL)
             }
         }
         
