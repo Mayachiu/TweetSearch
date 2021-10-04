@@ -13,11 +13,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var fromSwitch: UISwitch!
     @IBOutlet weak var sinceSwitch: UISwitch!
     @IBOutlet weak var untilSwitch: UISwitch!
+    @IBOutlet weak var hashtagSwitch: UISwitch!
     
     @IBOutlet weak var atmarkTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var sinceTextField: UITextField!
     @IBOutlet weak var untilTextField: UITextField!
+    @IBOutlet weak var hashtagTextField: UITextField!
     
     let sinceDatePicker = UIDatePicker()
     let untilDatePicker = UIDatePicker()
@@ -91,6 +93,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func hashtagSwitchAction(_ sender: Any) {
+        if hashtagSwitch.isOn == true {
+            hashtagTextField.isEnabled = true
+        } else {
+            hashtagTextField.isEnabled = false
+            hashtagTextField.text = ""
+        }
+    }
+    
+    
     
     
     @IBAction func Goaction(_ sender: Any) {
@@ -130,6 +142,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 urlArray.append(untilURL)
             }
         }
+        
+        if hashtagSwitch.isOn == true {
+            if hashtagTextField.text?.count != 0 {
+                let hashtagURL = "%23\(hashtagTextField.text!)"
+                urlArray.append(hashtagURL)
+            }
+        }
+        
 
         urlArray.append(url2)
         print(urlArray)
