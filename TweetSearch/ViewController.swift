@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lbl: UILabel!
-    @IBOutlet weak var swich: UISwitch!
+    @IBOutlet weak var atmarkSwitch: UISwitch!
     @IBOutlet weak var atmarkTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var sinceTextField: UITextField!
@@ -24,23 +24,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        atmarkTextField.delegate = self
         lbl.text = "初期"
         
         createSinceDatePicker()
         createUntilDatePicker()
         // Do any additional setup after loading the view.
+        
     }
-    @IBAction func atmarkACT(_ sender: Any) {
-    }
-    
-    @IBAction func btn(_ sender: Any) {
-        print(sinceTextField.text!)
-    }
-    
 
     @IBAction func act(_ sender: Any) {
-        if swich.isOn == true {
-            lbl.text = "ONです"
+        if atmarkSwitch.isOn == true {            lbl.text = "ONです"
             atmarkTextField.isEnabled = true
         } else {
             lbl.text = "OFFです"
