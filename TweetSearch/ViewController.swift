@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var untilSwitch: UISwitch!
     @IBOutlet weak var hashtagSwitch: UISwitch!
     @IBOutlet weak var exclusionSwitch: UISwitch!
+    @IBOutlet weak var word1Switch: UISwitch!
     
     @IBOutlet weak var atmarkTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
@@ -22,6 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var untilTextField: UITextField!
     @IBOutlet weak var hashtagTextField: UITextField!
     @IBOutlet weak var exclusionTextField: UITextField!
+    @IBOutlet weak var word1TextField: UITextField!
     
     let sinceDatePicker = UIDatePicker()
     let untilDatePicker = UIDatePicker()
@@ -45,6 +47,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        untilTextField.delegate = self
         hashtagTextField.delegate = self
         exclusionTextField.delegate = self
+        word1TextField.delegate = self
         lbl.text = "初期"
         
         createSinceDatePicker()
@@ -142,6 +145,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func word1SwitchAction(_ sender: Any) {
+        if word1Switch.isOn == true {
+            word1TextField.isEnabled = true
+        } else {
+            word1TextField.isEnabled = false
+            word1TextField.text = ""
+        }
+    }
+    
+    
     
     
     @IBAction func Goaction(_ sender: Any) {
@@ -196,6 +209,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
+        if word1Switch.isOn == true {
+            if word1TextField.text?.count != 0 {
+                let word1URL = "\(word1TextField.text!)"
+                urlArray.append(word1URL)
+            }
+        }
 
         urlArray.append(url2)
         print(urlArray)

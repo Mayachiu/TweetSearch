@@ -106,14 +106,27 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fch-qj-o8n">
-                                <rect key="frame" x="37" y="434" width="49" height="31"/>
+                                <rect key="frame" x="37" y="441" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="exclusionSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="gP8-g7-BcA"/>
                                 </connections>
                             </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hf3-Sq-sUX">
+                                <rect key="frame" x="35" y="519" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="word1SwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="qzX-QY-5Uv"/>
+                                </connections>
+                            </switch>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="word1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lwq-tG-706">
+                                <rect key="frame" x="109" y="517" width="156" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="-" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3P-TI-PB7">
-                                <rect key="frame" x="105" y="431" width="156" height="34"/>
+                                <rect key="frame" x="109" y="448" width="156" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -136,6 +149,8 @@
                         <outlet property="sinceTextField" destination="Hx2-EV-loI" id="zWR-fk-hBc"/>
                         <outlet property="untilSwitch" destination="ltV-I9-YOh" id="14T-pQ-FfJ"/>
                         <outlet property="untilTextField" destination="8Fk-la-Vno" id="WJt-ax-TEs"/>
+                        <outlet property="word1Switch" destination="hf3-Sq-sUX" id="Zic-A9-W8v"/>
+                        <outlet property="word1TextField" destination="lwq-tG-706" id="Lf3-B9-gZr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
