@@ -36,9 +36,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="atmarkACT:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="lKE-80-ebp"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtO-5p-dNJ">
                                 <rect key="frame" x="198" y="34" width="137" height="21"/>
@@ -57,19 +54,22 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQ9-Ki-Wmk">
                                 <rect key="frame" x="37" y="227" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sinceSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="X8n-V8-xcP"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ltV-I9-YOh">
                                 <rect key="frame" x="35" y="296" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="untilSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="50K-0d-9nd"/>
+                                </connections>
                             </switch>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="since" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hx2-EV-loI">
                                 <rect key="frame" x="105" y="227" width="164" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="atmarkACT:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="8xE-fp-4hy"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR0-S2-RvY">
                                 <rect key="frame" x="313" y="293" width="46" height="30"/>
@@ -102,7 +102,9 @@
                         <outlet property="fromSwitch" destination="2gT-QF-86a" id="pTd-Wh-qN7"/>
                         <outlet property="fromTextField" destination="pOg-cM-EAN" id="WMw-aR-tbE"/>
                         <outlet property="lbl" destination="vtO-5p-dNJ" id="LJA-bC-vM2"/>
+                        <outlet property="sinceSwitch" destination="BQ9-Ki-Wmk" id="Nkt-gn-Nby"/>
                         <outlet property="sinceTextField" destination="Hx2-EV-loI" id="zWR-fk-hBc"/>
+                        <outlet property="untilSwitch" destination="ltV-I9-YOh" id="14T-pQ-FfJ"/>
                         <outlet property="untilTextField" destination="8Fk-la-Vno" id="WJt-ax-TEs"/>
                     </connections>
                 </viewController>

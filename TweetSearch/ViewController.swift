@@ -11,6 +11,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var atmarkSwitch: UISwitch!
     @IBOutlet weak var fromSwitch: UISwitch!
+    @IBOutlet weak var sinceSwitch: UISwitch!
+    @IBOutlet weak var untilSwitch: UISwitch!
     
     @IBOutlet weak var atmarkTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
@@ -47,26 +49,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
            return true
        }
     
-    //    override func didReceiveMemoryWarning() {
-//           super.didReceiveMemoryWarning()
-//       }
-//    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//          // キーボードを閉じる
-//          textField.resignFirstResponder()
-//          return true
-//      }
-
+    
     @IBAction func btn(_ sender: Any) {
         let t = fromTextField.text
         print(t!.count)
     }
     
     @IBAction func atmarkSwitchAction(_ sender: Any) {
-        if atmarkSwitch.isOn == true {          
+        if atmarkSwitch.isOn == true {
             atmarkTextField.isEnabled = true
         } else {
             atmarkTextField.isEnabled = false
+            atmarkTextField.text = ""
         }
     }
     
@@ -75,14 +69,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
             fromTextField.isEnabled = true
         } else {
             fromTextField.isEnabled = false
+            fromTextField.text = ""
         }
     }
+    
+    @IBAction func sinceSwitchAction(_ sender: Any) {
+        if sinceSwitch.isOn == true {
+            sinceTextField.isEnabled = true
+        } else {
+            sinceTextField.isEnabled = false
+            sinceTextField.text = ""
+        }
+    }
+    
+    @IBAction func untilSwitchAction(_ sender: Any) {
+        if untilSwitch.isOn == true {
+            untilTextField.isEnabled = true
+        } else {
+            untilTextField.isEnabled = false
+            untilTextField.text = ""
+        }
+    }
+    
     
     
     @IBAction func Goaction(_ sender: Any) {
         var urlArray: [String] = [url1]
         
         if atmarkSwitch.isOn == true {
+            //onでも0文字にできるからこの一行必要
             if atmarkTextField.text?.count != 0 {
                 let atmarkURL = "%40\(atmarkTextField.text!)"
                 urlArray.append(atmarkURL)
@@ -91,27 +106,32 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
         if fromSwitch.isOn == true {
+            //onでも0文字にできるからこの一行必要
             if fromTextField.text?.count != 0 {
                 let fromURL = "from%3A\(fromTextField.text!)"
                 urlArray.append(fromURL)
             }
         }
         
+        if sinceSwitch.isOn == true {
+            if sinceTextField.text?.count != 0 {
+                let sinceText = sinceTextField.text
+                let sinceArray = sinceText?.split(separator: "/")
+                let sinceURL = "since%3A\(sinceArray![0])-\(sinceArray![1])-\(sinceArray![2])"
+                urlArray.append(sinceURL)
+            }
+        }
         
-//        let sinceText = sinceTextField.text
-//        let sinceArray = sinceText?.split(separator: "/")
-//        let sinceURL = "since%3A\(sinceArray![0])-\(sinceArray![1])-\(sinceArray![2])"
-//
-//        let untilText = untilTextField.text
-//        let untilArray = untilText?.split(separator: "/")
-//        let untilURL = "until%3A\(untilArray![0])-\(untilArray![1])-\(untilArray![2])"
-        
-        
-        
-        
-//        urlArray.append(sinceURL)
-//        urlArray.append(untilURL)
-//        urlArray.append(url2)
+        if untilSwitch.isOn == true {
+            if untilTextField.text?.count != 0 {
+                let untilText = untilTextField.text
+                let untilArray = untilText?.split(separator: "/")
+                let untilURL = "until%3A\(untilArray![0])-\(untilArray![1])-\(untilArray![2])"
+                urlArray.append(untilURL)
+            }
+        }
+
+        urlArray.append(url2)
         print(urlArray)
         
         let joinURL: String = urlArray.joined(separator: "%20")
