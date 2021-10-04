@@ -32,6 +32,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         atmarkTextField.delegate = self
         fromTextField.delegate = self
+//        sinceTextField.delegate = self
+//        untilTextField.delegate = self
+        hashtagTextField.delegate = self
         lbl.text = "初期"
         
         createSinceDatePicker()
