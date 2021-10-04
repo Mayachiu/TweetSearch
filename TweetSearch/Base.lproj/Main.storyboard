@@ -20,7 +20,7 @@
                                 <rect key="frame" x="37" y="94" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="act:" destination="BYZ-38-t0r" eventType="valueChanged" id="QFg-CK-InC"/>
+                                    <action selector="atmarkSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="QFg-CK-InC"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQD-r8-E1c">
@@ -51,7 +51,7 @@
                                 <rect key="frame" x="35" y="152" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="act2:" destination="BYZ-38-t0r" eventType="valueChanged" id="yeG-Ed-26s"/>
+                                    <action selector="fromSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="yeG-Ed-26s"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQ9-Ki-Wmk">

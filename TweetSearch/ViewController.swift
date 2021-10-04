@@ -62,20 +62,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print(t!.count)
     }
     
-    @IBAction func act(_ sender: Any) {
-        if atmarkSwitch.isOn == true {            lbl.text = "ONです"
+    @IBAction func atmarkSwitchAction(_ sender: Any) {
+        if atmarkSwitch.isOn == true {          
             atmarkTextField.isEnabled = true
         } else {
-            lbl.text = "OFFです"
             atmarkTextField.isEnabled = false
         }
     }
     
-    @IBAction func act2(_ sender: Any) {
+    @IBAction func fromSwitchAction(_ sender: Any) {
         if fromSwitch.isOn == true {
             fromTextField.isEnabled = true
         } else {
-            lbl.text = "OFFです"
             fromTextField.isEnabled = false
         }
     }
