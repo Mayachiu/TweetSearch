@@ -48,7 +48,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         hashtagTextField.delegate = self
         exclusionTextField.delegate = self
         word1TextField.delegate = self
-        lbl.text = "初期"
         
         createSinceDatePicker()
         createUntilDatePicker()
