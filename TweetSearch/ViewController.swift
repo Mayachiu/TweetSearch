@@ -57,6 +57,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //          return true
 //      }
 
+    @IBAction func btn(_ sender: Any) {
+        let t = fromTextField.text
+        print(t!.count)
+    }
+    
     @IBAction func act(_ sender: Any) {
         if atmarkSwitch.isOn == true {            lbl.text = "ONです"
             atmarkTextField.isEnabled = true
@@ -79,9 +84,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func Goaction(_ sender: Any) {
         var urlArray: [String] = [url1]
         
-//        let atmarkURL = "%40\(atmarkTextField.text!)"
+        if atmarkSwitch.isOn == true {
+            if atmarkTextField.text?.count != 0 {
+                let atmarkURL = "%40\(atmarkTextField.text!)"
+                urlArray.append(atmarkURL)
+                
+            }
+        }
         
-        let fromURL = "from%3A\(fromTextField.text!)"
+        if fromSwitch.isOn == true {
+            if fromTextField.text?.count != 0 {
+                let fromURL = "from%3A\(fromTextField.text!)"
+                urlArray.append(fromURL)
+            }
+        }
+        
         
 //        let sinceText = sinceTextField.text
 //        let sinceArray = sinceText?.split(separator: "/")
@@ -92,8 +109,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        let untilURL = "until%3A\(untilArray![0])-\(untilArray![1])-\(untilArray![2])"
         
         
-//        urlArray.append(atmarkURL)
-        urlArray.append(fromURL)
+        
+        
 //        urlArray.append(sinceURL)
 //        urlArray.append(untilURL)
 //        urlArray.append(url2)
