@@ -30,6 +30,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
+        
         atmarkTextField.delegate = self
         fromTextField.delegate = self
 //        sinceTextField.delegate = self
@@ -42,6 +49,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+          if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+              if self.view.frame.origin.y == 0 {
+                  self.view.frame.origin.y -= keyboardSize.height
+              } else {
+                  let suggestionHeight = self.view.frame.origin.y + keyboardSize.height
+                  self.view.frame.origin.y -= suggestionHeight
+              }
+          }
+        
+    }
+    
+    @objc func keyboardWillHide() {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y = 0
+            }
+        }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
            self.view.endEditing(true)
