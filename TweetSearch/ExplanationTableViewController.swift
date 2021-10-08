@@ -10,13 +10,13 @@ import UIKit
 class ExplanationTableViewController: UITableViewController {
 
     var memos = [
-        ["title": "@", "detail": "あ"],
-        ["title": "from", "detail": "い"],
-        ["title": "since", "detail": "い"],
-        ["title": "until", "detail": "い"],
-        ["title": "word", "detail": "い"],
-        ["title": "-", "detail": "い"],
-        ["title": "#", "detail": "い"]
+        ["title": "@", "detail": "指定ユーザーのツイートや、指定ユーザーへのリプライなどが表示されます。"],
+        ["title": "from", "detail": "指定ユーザーのツイートが表示されます。指定ユーザーへのリプライなどは表示されません。"],
+        ["title": "since", "detail": "指定した日付から現在までのツイートを表示します。"],
+        ["title": "until", "detail": "過去から指定した日付までのツイートを表示します。"],
+        ["title": "word", "detail": "特定の言葉が含まれるツイートを表示します。"],
+        ["title": "-", "detail": "特定の言葉を除外して検索することができます。"],
+        ["title": "#", "detail": "ハッシュタグの検索を行うことができます。"]
     ]
     
     override func viewDidLoad() {
@@ -48,11 +48,12 @@ class ExplanationTableViewController: UITableViewController {
         // Configure the cell...
         cell.textLabel?.text = self.memos[indexPath.row]["title"]
         cell.detailTextLabel?.text = self.memos[indexPath.row]["detail"]
+        cell.detailTextLabel?.numberOfLines = 0
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 90
     }
 
     /*
