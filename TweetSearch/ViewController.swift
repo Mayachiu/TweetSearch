@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     let url1 = "https://twitter.com/search?q="
     let url2 = "&src=typed_query&f=top"
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +43,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         atmarkTextField.delegate = self
         fromTextField.delegate = self
-//        sinceTextField.delegate = self
-//        untilTextField.delegate = self
+        //        sinceTextField.delegate = self
+        //        untilTextField.delegate = self
         hashtagTextField.delegate = self
         exclusionTextField.delegate = self
         word1TextField.delegate = self
@@ -56,33 +56,33 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-          if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-              if self.view.frame.origin.y == 0 {
-                  self.view.frame.origin.y -= keyboardSize.height
-              } else {
-                  let suggestionHeight = self.view.frame.origin.y + keyboardSize.height
-                  self.view.frame.origin.y -= suggestionHeight
-              }
-          }
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            } else {
+                let suggestionHeight = self.view.frame.origin.y + keyboardSize.height
+                self.view.frame.origin.y -= suggestionHeight
+            }
+        }
         
     }
     
     @objc func keyboardWillHide() {
-            if self.view.frame.origin.y != 0 {
-                self.view.frame.origin.y = 0
-            }
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
         }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-           self.view.endEditing(true)
-       }
+        self.view.endEditing(true)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-           // キーボードを閉じる
-           textField.resignFirstResponder()
-           
-           return true
-       }
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        
+        return true
+    }
     
     @IBAction func atmarkSwitchAction(_ sender: Any) {
         if atmarkSwitch.isOn == true {
@@ -208,7 +208,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 urlArray.append(word1URL)
             }
         }
-
+        
         urlArray.append(url2)
         print(urlArray)
         
@@ -224,107 +224,107 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func createSinceDatePicker(){
-
-          // DatePickerModeをDate(日付)に設定
-          sinceDatePicker.datePickerMode = .date
         
-
-          // DatePickerを日本語化
-          sinceDatePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
+        // DatePickerModeをDate(日付)に設定
+        sinceDatePicker.datePickerMode = .date
         
-         
-         sinceDatePicker.preferredDatePickerStyle = .wheels
         
-
-          // textFieldのinputViewにdatepickerを設定
-          sinceTextField.inputView = sinceDatePicker
+        // DatePickerを日本語化
+        sinceDatePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
         
-
-          // UIToolbarを設定
-          let toolbar = UIToolbar()
-          toolbar.sizeToFit()
-
-          // Doneボタンを設定(押下時doneClickedが起動)
-         let doneButton = UIBarButtonItem(title: "OK", style: .done, target: nil, action: #selector(sinceDoneClicked))
-
-          // Doneボタンを追加
-         toolbar.setItems([doneButton], animated: true)
-
-          // FieldにToolbarを追加
-          sinceTextField.inputAccessoryView = toolbar
         
-      }
-
-      @objc func sinceDoneClicked(){
-          let sinceDateFormatter = DateFormatter()
+        sinceDatePicker.preferredDatePickerStyle = .wheels
         
-
-          // 持ってくるデータのフォーマットを設定
-          sinceDateFormatter.dateStyle = .medium
-          sinceDateFormatter.timeStyle = .none
-         sinceDateFormatter.locale    = NSLocale(localeIdentifier: "ja_JP") as Locale?
-          sinceDateFormatter.dateStyle = DateFormatter.Style.medium
         
-          // textFieldに選択した日付を代入
-          sinceTextField.text = sinceDateFormatter.string(from: sinceDatePicker.date)
-
-          // キーボードを閉じる
-          self.view.endEditing(true)
-      }
-
+        // textFieldのinputViewにdatepickerを設定
+        sinceTextField.inputView = sinceDatePicker
+        
+        
+        // UIToolbarを設定
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        // Doneボタンを設定(押下時doneClickedが起動)
+        let doneButton = UIBarButtonItem(title: "OK", style: .done, target: nil, action: #selector(sinceDoneClicked))
+        
+        // Doneボタンを追加
+        toolbar.setItems([doneButton], animated: true)
+        
+        // FieldにToolbarを追加
+        sinceTextField.inputAccessoryView = toolbar
+        
+    }
+    
+    @objc func sinceDoneClicked(){
+        let sinceDateFormatter = DateFormatter()
+        
+        
+        // 持ってくるデータのフォーマットを設定
+        sinceDateFormatter.dateStyle = .medium
+        sinceDateFormatter.timeStyle = .none
+        sinceDateFormatter.locale    = NSLocale(localeIdentifier: "ja_JP") as Locale?
+        sinceDateFormatter.dateStyle = DateFormatter.Style.medium
+        
+        // textFieldに選択した日付を代入
+        sinceTextField.text = sinceDateFormatter.string(from: sinceDatePicker.date)
+        
+        // キーボードを閉じる
+        self.view.endEditing(true)
+    }
+    
     
     
     
     func createUntilDatePicker(){
-
-          // DatePickerModeをDate(日付)に設定
-          
+        
+        // DatePickerModeをDate(日付)に設定
+        
         untilDatePicker.datePickerMode = .date
-
-          // DatePickerを日本語化
-          
+        
+        // DatePickerを日本語化
+        
         untilDatePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
-         
-         
+        
+        
         untilDatePicker.preferredDatePickerStyle = .wheels
-
-          // textFieldのinputViewにdatepickerを設定
-         
+        
+        // textFieldのinputViewにdatepickerを設定
+        
         untilTextField.inputView = untilDatePicker
-
-          // UIToolbarを設定
-          let toolbar = UIToolbar()
-          toolbar.sizeToFit()
-
-          // Doneボタンを設定(押下時doneClickedが起動)
-         let doneButton = UIBarButtonItem(title: "OK", style: .done, target: nil, action: #selector(untilDoneClicked))
-
-          // Doneボタンを追加
-         toolbar.setItems([doneButton], animated: true)
-
-          // FieldにToolbarを追加
+        
+        // UIToolbarを設定
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        // Doneボタンを設定(押下時doneClickedが起動)
+        let doneButton = UIBarButtonItem(title: "OK", style: .done, target: nil, action: #selector(untilDoneClicked))
+        
+        // Doneボタンを追加
+        toolbar.setItems([doneButton], animated: true)
+        
+        // FieldにToolbarを追加
         untilTextField.inputAccessoryView = toolbar
-      }
-
-      @objc func untilDoneClicked(){
-          
+    }
+    
+    @objc func untilDoneClicked(){
+        
         let untilDateFormatter = DateFormatter()
-
-          // 持ってくるデータのフォーマットを設定
-          
+        
+        // 持ってくるデータのフォーマットを設定
+        
         untilDateFormatter.dateStyle = .medium
         untilDateFormatter.timeStyle = .none
-       untilDateFormatter.locale    = NSLocale(localeIdentifier: "ja_JP") as Locale?
+        untilDateFormatter.locale    = NSLocale(localeIdentifier: "ja_JP") as Locale?
         untilDateFormatter.dateStyle = DateFormatter.Style.medium
-
-          // textFieldに選択した日付を代入
-          
+        
+        // textFieldに選択した日付を代入
+        
         untilTextField.text = untilDateFormatter.string(from: untilDatePicker.date)
-
-          // キーボードを閉じる
-          self.view.endEditing(true)
-      }
-
+        
+        // キーボードを閉じる
+        self.view.endEditing(true)
+    }
+    
     
     
 }
