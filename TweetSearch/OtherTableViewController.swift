@@ -44,7 +44,6 @@ class OtherTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         tableView.deselectRow(at: indexPath, animated: true)
         
         let url1 = URL(string: "https://forms.gle/nGae1HGbHEoqZPio6")
