@@ -9,7 +9,7 @@ import UIKit
 
 class OtherTableViewController: UITableViewController {
 
-    let otherList = ["お問い合わせと不具合報告"]
+    let otherList = ["お問い合わせと不具合報告","a"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +46,23 @@ class OtherTableViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let url = URL(string: "https://forms.gle/nGae1HGbHEoqZPio6")
+        let url1 = URL(string: "https://forms.gle/nGae1HGbHEoqZPio6")
+        let url2 = URL(string: "https://www.yahoo.co.jp/")
         
-        UIApplication.shared.open(url!)
+        
+        let cell: UITableViewCell = self.tableView(tableView, cellForRowAt: indexPath)
+                print((cell.textLabel?.text)!)
+        
+        if cell.textLabel?.text == otherList[0] {
+            UIApplication.shared.open(url1!)
+        } else if cell.textLabel?.text == otherList[1] {
+            UIApplication.shared.open(url2!)
+        }
+        
         
         }
+    
+
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
