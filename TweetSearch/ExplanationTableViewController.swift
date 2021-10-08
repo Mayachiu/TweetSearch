@@ -9,7 +9,15 @@ import UIKit
 
 class ExplanationTableViewController: UITableViewController {
 
-    var memos = ["あ","い"]
+    var memos = [
+        ["title": "@", "detail": "あ"],
+        ["title": "from", "detail": "い"],
+        ["title": "since", "detail": "い"],
+        ["title": "until", "detail": "い"],
+        ["title": "word", "detail": "い"],
+        ["title": "-", "detail": "い"],
+        ["title": "#", "detail": "い"]
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +46,14 @@ class ExplanationTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = self.memos[indexPath.row]
+        cell.textLabel?.text = self.memos[indexPath.row]["title"]
+        cell.detailTextLabel?.text = self.memos[indexPath.row]["detail"]
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 
     /*
     // Override to support conditional editing of the table view.
