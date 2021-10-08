@@ -84,12 +84,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
            return true
        }
     
-    
-    @IBAction func btn(_ sender: Any) {
-        let t = fromTextField.text
-        print(t!.count)
-    }
-    
     @IBAction func atmarkSwitchAction(_ sender: Any) {
         if atmarkSwitch.isOn == true {
             atmarkTextField.isEnabled = true
@@ -156,7 +150,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    @IBAction func Goaction(_ sender: Any) {
+    @IBAction func searchActionButton(_ sender: Any) {
         var urlArray: [String] = [url1]
         
         if atmarkSwitch.isOn == true {
