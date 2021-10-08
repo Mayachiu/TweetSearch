@@ -35,7 +35,6 @@ class OtherTableViewController: UITableViewController {
         return otherList.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2", for: indexPath)
         
@@ -51,9 +50,7 @@ class OtherTableViewController: UITableViewController {
         let url1 = URL(string: "https://forms.gle/nGae1HGbHEoqZPio6")
         let url2 = URL(string: "https://www.yahoo.co.jp/")
         
-        
         let cell: UITableViewCell = self.tableView(tableView, cellForRowAt: indexPath)
-        print((cell.textLabel?.text)!)
         
         if cell.textLabel?.text == otherList[0] {
             UIApplication.shared.open(url1!)
@@ -61,10 +58,7 @@ class OtherTableViewController: UITableViewController {
             UIApplication.shared.open(url2!)
         }
         
-        
     }
-    
-    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
