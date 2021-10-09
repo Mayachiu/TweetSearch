@@ -25,97 +25,101 @@
                                     <action selector="searchActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0LE-Z9-qRs"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="HR5-nO-Bzh">
-                                <rect key="frame" x="20" y="20" width="295" height="607"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="HR5-nO-Bzh">
+                                <rect key="frame" x="20" y="50" width="295" height="460"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="nja-Yy-8Hl">
-                                        <rect key="frame" x="0.0" y="0.0" width="49" height="607"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="nja-Yy-8Hl">
+                                        <rect key="frame" x="0.0" y="0.0" width="49" height="460"/>
                                         <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M8P-xN-nQX">
-                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M8P-xN-nQX">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="27"/>
                                                 <connections>
                                                     <action selector="atmarkSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="QFg-CK-InC"/>
                                                 </connections>
                                             </switch>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2gT-QF-86a">
-                                                <rect key="frame" x="0.0" y="96" width="51" height="31"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2gT-QF-86a">
+                                                <rect key="frame" x="0.0" y="72" width="51" height="27.5"/>
                                                 <connections>
                                                     <action selector="fromSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="yeG-Ed-26s"/>
                                                 </connections>
                                             </switch>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQ9-Ki-Wmk">
-                                                <rect key="frame" x="0.0" y="192" width="51" height="31"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQ9-Ki-Wmk">
+                                                <rect key="frame" x="0.0" y="144.5" width="51" height="27"/>
                                                 <connections>
                                                     <action selector="sinceSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="X8n-V8-xcP"/>
                                                 </connections>
                                             </switch>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ltV-I9-YOh">
-                                                <rect key="frame" x="0.0" y="288" width="51" height="31"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ltV-I9-YOh">
+                                                <rect key="frame" x="0.0" y="216.5" width="51" height="27"/>
                                                 <connections>
                                                     <action selector="untilSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="50K-0d-9nd"/>
                                                 </connections>
                                             </switch>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hf3-Sq-sUX">
-                                                <rect key="frame" x="0.0" y="384" width="51" height="31"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hf3-Sq-sUX">
+                                                <rect key="frame" x="0.0" y="288.5" width="51" height="27"/>
                                                 <connections>
                                                     <action selector="word1SwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="qzX-QY-5Uv"/>
                                                 </connections>
                                             </switch>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fch-qj-o8n">
-                                                <rect key="frame" x="0.0" y="480" width="51" height="31"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fch-qj-o8n">
+                                                <rect key="frame" x="0.0" y="360.5" width="51" height="27.5"/>
                                                 <connections>
                                                     <action selector="exclusionSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="gP8-g7-BcA"/>
                                                 </connections>
                                             </switch>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Iu-Gi-hTu">
-                                                <rect key="frame" x="0.0" y="576" width="51" height="31"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Iu-Gi-hTu">
+                                                <rect key="frame" x="0.0" y="433" width="51" height="27"/>
                                                 <connections>
                                                     <action selector="hashtagSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="KWc-02-6Uq"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="t8h-fi-DSI">
-                                        <rect key="frame" x="109" y="0.0" width="186" height="607"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="t8h-fi-DSI">
+                                        <rect key="frame" x="109" y="0.0" width="186" height="460"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yyV-QC-KHL">
-                                                <rect key="frame" x="0.0" y="0.0" width="186" height="31"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yyV-QC-KHL">
+                                                <rect key="frame" x="0.0" y="0.0" width="186" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="from" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pOg-cM-EAN">
-                                                <rect key="frame" x="0.0" y="96" width="186" height="31"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="from" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pOg-cM-EAN">
+                                                <rect key="frame" x="0.0" y="72" width="186" height="27.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="since" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hx2-EV-loI">
-                                                <rect key="frame" x="0.0" y="192" width="186" height="31"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="since" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hx2-EV-loI">
+                                                <rect key="frame" x="0.0" y="144.5" width="186" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="until" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Fk-la-Vno">
-                                                <rect key="frame" x="0.0" y="288" width="186" height="31"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="until" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Fk-la-Vno">
+                                                <rect key="frame" x="0.0" y="216.5" width="186" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="word1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lwq-tG-706">
-                                                <rect key="frame" x="0.0" y="384" width="186" height="31"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="word1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lwq-tG-706">
+                                                <rect key="frame" x="0.0" y="288.5" width="186" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="-" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3P-TI-PB7">
-                                                <rect key="frame" x="0.0" y="480" width="186" height="31"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="-" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3P-TI-PB7">
+                                                <rect key="frame" x="0.0" y="360.5" width="186" height="27.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="#" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QC7-Ig-LFm">
-                                                <rect key="frame" x="0.0" y="576" width="186" height="31"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="#" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QC7-Ig-LFm">
+                                                <rect key="frame" x="0.0" y="433" width="186" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="460" id="MDa-Z9-3DL"/>
+                                    <constraint firstAttribute="width" secondItem="HR5-nO-Bzh" secondAttribute="height" multiplier="295:481" id="a4Q-4V-aKs"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -123,6 +127,7 @@
                         <constraints>
                             <constraint firstItem="HR5-nO-Bzh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TZ0-gZ-71X"/>
                             <constraint firstItem="HR5-nO-Bzh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W5z-BG-upx"/>
+                            <constraint firstItem="HR5-nO-Bzh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="WP9-VQ-Z1b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HR5-nO-Bzh" secondAttribute="trailing" constant="60" id="xy5-Xb-job"/>
                         </constraints>
                     </view>
