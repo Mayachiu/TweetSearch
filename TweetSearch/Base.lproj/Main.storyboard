@@ -121,7 +121,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <state key="normal" title="検索">
-                                    <color key="titleColor" red="0.29803922770000002" green="0.61960786580000005" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.30196079609999998" green="0.66274511810000003" blue="0.9098039269" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="searchActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0LE-Z9-qRs"/>
@@ -129,7 +129,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.29803922770000002" green="0.61960786580000005" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.30196079609999998" green="0.66274511810000003" blue="0.9098039269" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="HR5-nO-Bzh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TZ0-gZ-71X"/>
                             <constraint firstItem="HR5-nO-Bzh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W5z-BG-upx"/>
