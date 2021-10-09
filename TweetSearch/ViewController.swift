@@ -189,24 +189,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        if hashtagSwitch.isOn == true {
-            if hashtagTextField.text?.count != 0 {
-                let hashtagURL = "%23\(hashtagTextField.text!)"
-                urlArray.append(hashtagURL)
+        if word1Switch.isOn == true {
+            if word1TextField.text?.count != 0 {
+                let word1URL = "\(word1TextField.text!)"
+                //日本語をURLに入れるときはエンコードする必要あり
+                let encodeWord1URL = word1URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                urlArray.append(encodeWord1URL!)
             }
         }
         
         if exclusionSwitch.isOn == true {
             if exclusionTextField.text?.count != 0 {
-                let exclusionURL = "-\(exclusionTextField.text!)"
-                urlArray.append(exclusionURL)
+                let exclusionURL = exclusionTextField.text!
+                let encodeExclusionURL1 = exclusionURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                let encodeExclusionURL2 = "-\(encodeExclusionURL1)"
+                urlArray.append(encodeExclusionURL2)
             }
         }
         
-        if word1Switch.isOn == true {
-            if word1TextField.text?.count != 0 {
-                let word1URL = "\(word1TextField.text!)"
-                urlArray.append(word1URL)
+        if hashtagSwitch.isOn == true {
+            if hashtagTextField.text?.count != 0 {
+                let hashtagURL = hashtagTextField.text!
+                let encodeHashtagURL1 = hashtagURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                let encodeHashtagURL2 = "%23\(encodeHashtagURL1)"
+                urlArray.append(encodeHashtagURL2)
             }
         }
         
@@ -216,6 +222,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let url = URL(string: joinURL)
         
         UIApplication.shared.open(url!)
+        
     }
     
     func createSinceDatePicker(){
@@ -243,7 +250,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sinceDateFormatter.dateStyle = DateFormatter.Style.medium
         
         sinceTextField.text = sinceDateFormatter.string(from: sinceDatePicker.date)
-
+        
         self.view.endEditing(true)
     }
     
