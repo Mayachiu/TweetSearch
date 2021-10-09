@@ -201,6 +201,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if exclusionSwitch.isOn == true {
             if exclusionTextField.text?.count != 0 {
                 let exclusionURL = exclusionTextField.text!
+                //nil注意
                 let encodeExclusionURL1 = exclusionURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
                 let encodeExclusionURL2 = "-\(encodeExclusionURL1)"
                 urlArray.append(encodeExclusionURL2)
