@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--検索-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="TweetSearch" customModuleProvider="target" sceneMemberID="viewController">
@@ -139,7 +139,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KR0-S2-RvY" secondAttribute="bottom" constant="10" id="zsX-Gn-q9X"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="EtC-O3-Rn9"/>
+                    <tabBarItem key="tabBarItem" title="検索" image="magnifyingglass" catalog="system" id="EtC-O3-Rn9"/>
                     <connections>
                         <outlet property="atmarkSwitch" destination="M8P-xN-nQX" id="f3J-7H-sa0"/>
                         <outlet property="atmarkTextField" destination="yyV-QC-KHL" id="ND7-sW-tyA"/>
@@ -182,7 +182,7 @@
             </objects>
             <point key="canvasLocation" x="-396" y="-122.78860569715144"/>
         </scene>
-        <!--Item-->
+        <!--使い方-->
         <scene sceneID="2N5-fZ-98l">
             <objects>
                 <tableViewController id="4VH-jC-H5O" customClass="ExplanationTableViewController" customModule="TweetSearch" customModuleProvider="target" sceneMemberID="viewController">
@@ -221,16 +221,13 @@
                             <outlet property="delegate" destination="4VH-jC-H5O" id="Esg-BR-ucv"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="KnT-IZ-wDl"/>
-                    <connections>
-                        <outlet property="explanationTableView" destination="DTl-gz-rnO" id="efa-J0-u1K"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="使い方" image="book" catalog="system" id="KnT-IZ-wDl"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uq6-FU-EEP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="368" y="209"/>
         </scene>
-        <!--Item-->
+        <!--その他-->
         <scene sceneID="isn-zk-9zo">
             <objects>
                 <tableViewController id="ECl-sv-NWt" customClass="OtherTableViewController" customModule="TweetSearch" customModuleProvider="target" sceneMemberID="viewController">
@@ -253,7 +250,7 @@
                             <outlet property="delegate" destination="ECl-sv-NWt" id="0TP-Pa-O6z"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="kHT-mW-Q8o"/>
+                    <tabBarItem key="tabBarItem" title="その他" image="gearshape" catalog="system" id="kHT-mW-Q8o"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1rQ-rd-js6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -261,6 +258,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="102"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

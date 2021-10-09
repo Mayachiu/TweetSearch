@@ -9,8 +9,6 @@ import UIKit
 
 class ExplanationTableViewController: UITableViewController {
     
-    @IBOutlet var explanationTableView: UITableView!
-    
     var memos = [
         ["title": "@", "detail": "指定ユーザーのツイートや、指定ユーザーへのリプライなどが表示されます。"],
         ["title": "from", "detail": "指定ユーザーのツイートのみが表示されます。指定ユーザーへのリプライなどは表示されません。特定の1人のユーザーを検索したいときは、@よりもfromを推奨します。"],
@@ -24,8 +22,6 @@ class ExplanationTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        explanationTableView.dataSource = self
-        explanationTableView.separatorColor = .gray
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
