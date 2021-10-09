@@ -24,6 +24,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var exclusionTextField: UITextField!
     @IBOutlet weak var word1TextField: UITextField!
     
+    @IBOutlet weak var searchActionButton: UIButton!
+    
     let sinceDatePicker = UIDatePicker()
     let untilDatePicker = UIDatePicker()
     
@@ -48,6 +50,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         createSinceDatePicker()
         createUntilDatePicker()
+        
+        searchActionButton.layer.cornerRadius = searchActionButton.frame.size.width / 2
         // Do any additional setup after loading the view.
     }
     

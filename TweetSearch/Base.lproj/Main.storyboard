@@ -16,17 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR0-S2-RvY">
-                                <rect key="frame" x="235.5" y="568" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.8392156959" green="0.99607843159999998" blue="0.76470589639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="検索"/>
-                                <connections>
-                                    <action selector="searchActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0LE-Z9-qRs"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="HR5-nO-Bzh">
-                                <rect key="frame" x="20" y="50" width="295" height="460"/>
+                                <rect key="frame" x="20" y="30" width="295" height="460"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="nja-Yy-8Hl">
                                         <rect key="frame" x="0.0" y="0.0" width="49" height="460"/>
@@ -121,14 +112,28 @@
                                     <constraint firstAttribute="width" secondItem="HR5-nO-Bzh" secondAttribute="height" multiplier="295:481" id="a4Q-4V-aKs"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR0-S2-RvY">
+                                <rect key="frame" x="290" y="553" width="55" height="55"/>
+                                <color key="backgroundColor" red="0.8392156959" green="0.99607843159999998" blue="0.76470589639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="40W-3x-Nen"/>
+                                    <constraint firstAttribute="width" constant="55" id="5jw-eP-BRe"/>
+                                </constraints>
+                                <state key="normal" title="検索"/>
+                                <connections>
+                                    <action selector="searchActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0LE-Z9-qRs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="HR5-nO-Bzh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TZ0-gZ-71X"/>
                             <constraint firstItem="HR5-nO-Bzh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W5z-BG-upx"/>
-                            <constraint firstItem="HR5-nO-Bzh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="WP9-VQ-Z1b"/>
+                            <constraint firstItem="HR5-nO-Bzh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="jTs-Xm-AmO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KR0-S2-RvY" secondAttribute="trailing" constant="30" id="rJp-nC-lc7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HR5-nO-Bzh" secondAttribute="trailing" constant="60" id="xy5-Xb-job"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KR0-S2-RvY" secondAttribute="bottom" constant="10" id="zsX-Gn-q9X"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="EtC-O3-Rn9"/>
@@ -141,6 +146,7 @@
                         <outlet property="fromTextField" destination="pOg-cM-EAN" id="WMw-aR-tbE"/>
                         <outlet property="hashtagSwitch" destination="3Iu-Gi-hTu" id="bGG-Ng-Rmy"/>
                         <outlet property="hashtagTextField" destination="QC7-Ig-LFm" id="gzg-fx-1R6"/>
+                        <outlet property="searchActionButton" destination="KR0-S2-RvY" id="S7o-mI-iNi"/>
                         <outlet property="sinceSwitch" destination="BQ9-Ki-Wmk" id="Nkt-gn-Nby"/>
                         <outlet property="sinceTextField" destination="Hx2-EV-loI" id="zWR-fk-hBc"/>
                         <outlet property="untilSwitch" destination="ltV-I9-YOh" id="14T-pQ-FfJ"/>
