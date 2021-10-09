@@ -114,19 +114,22 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR0-S2-RvY">
                                 <rect key="frame" x="290" y="553" width="55" height="55"/>
-                                <color key="backgroundColor" red="0.8392156959" green="0.99607843159999998" blue="0.76470589639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="40W-3x-Nen"/>
                                     <constraint firstAttribute="width" constant="55" id="5jw-eP-BRe"/>
                                 </constraints>
-                                <state key="normal" title="検索"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="検索">
+                                    <color key="titleColor" red="0.29803922770000002" green="0.61960786580000005" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="searchActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0LE-Z9-qRs"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" red="0.29803922770000002" green="0.61960786580000005" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="HR5-nO-Bzh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TZ0-gZ-71X"/>
                             <constraint firstItem="HR5-nO-Bzh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W5z-BG-upx"/>
@@ -183,16 +186,16 @@
         <scene sceneID="2N5-fZ-98l">
             <objects>
                 <tableViewController id="4VH-jC-H5O" customClass="ExplanationTableViewController" customModule="TweetSearch" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DTl-gz-rnO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DTl-gz-rnO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="b1Z-Bj-FHw" detailTextLabel="QRS-DE-wSy" style="IBUITableViewCellStyleSubtitle" id="bZJ-Kg-YD6">
-                                <rect key="frame" x="0.0" y="24.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="24.5" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bZJ-Kg-YD6" id="rcn-Pp-ug1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b1Z-Bj-FHw">
@@ -219,6 +222,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="KnT-IZ-wDl"/>
+                    <connections>
+                        <outlet property="explanationTableView" destination="DTl-gz-rnO" id="efa-J0-u1K"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uq6-FU-EEP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -257,9 +263,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

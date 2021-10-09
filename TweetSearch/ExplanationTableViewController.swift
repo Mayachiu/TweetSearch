@@ -9,6 +9,8 @@ import UIKit
 
 class ExplanationTableViewController: UITableViewController {
     
+    @IBOutlet var explanationTableView: UITableView!
+    
     var memos = [
         ["title": "@", "detail": "指定ユーザーのツイートや、指定ユーザーへのリプライなどが表示されます。"],
         ["title": "from", "detail": "指定ユーザーのツイートのみが表示されます。指定ユーザーへのリプライなどは表示されません。特定の1人のユーザーを検索したいときは、@よりもfromを推奨します。"],
@@ -22,6 +24,8 @@ class ExplanationTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        explanationTableView.dataSource = self
+        explanationTableView.separatorColor = .gray
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -48,6 +52,7 @@ class ExplanationTableViewController: UITableViewController {
         // Configure the cell...
         cell.textLabel?.font = UIFont.systemFont(ofSize: 18)
         cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
+        cell.detailTextLabel?.textColor = .gray
         cell.textLabel?.text = self.memos[indexPath.row]["title"]
         cell.detailTextLabel?.text = self.memos[indexPath.row]["detail"]
         cell.detailTextLabel?.numberOfLines = 0
@@ -55,7 +60,7 @@ class ExplanationTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 120
     }
     
     /*
