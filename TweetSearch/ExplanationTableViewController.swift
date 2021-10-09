@@ -11,10 +11,10 @@ class ExplanationTableViewController: UITableViewController {
     
     var memos = [
         ["title": "@", "detail": "指定ユーザーのツイートや、指定ユーザーへのリプライなどが表示されます。"],
-        ["title": "from", "detail": "指定ユーザーのツイートが表示されます。指定ユーザーへのリプライなどは表示されません。"],
+        ["title": "from", "detail": "指定ユーザーのツイートのみが表示されます。指定ユーザーへのリプライなどは表示されません。特定の1人のユーザーを検索したいときは、@よりもfromを推奨します。"],
         ["title": "since", "detail": "指定した日付から現在までのツイートを表示します。"],
         ["title": "until", "detail": "過去から指定した日付までのツイートを表示します。"],
-        ["title": "word", "detail": "特定の言葉が含まれるツイートを表示します。"],
+        ["title": "word", "detail": "特定の言葉が含まれるツイートを表示します。word, -, #は現在1単語しか検索できませんが、アップデートで増やす予定です。"],
         ["title": "-", "detail": "特定の言葉を除外して検索することができます。"],
         ["title": "#", "detail": "ハッシュタグの検索を行うことができます。"]
     ]
@@ -46,6 +46,8 @@ class ExplanationTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         // Configure the cell...
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 18)
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
         cell.textLabel?.text = self.memos[indexPath.row]["title"]
         cell.detailTextLabel?.text = self.memos[indexPath.row]["detail"]
         cell.detailTextLabel?.numberOfLines = 0
