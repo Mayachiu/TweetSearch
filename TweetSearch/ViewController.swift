@@ -255,9 +255,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    
-    
-    
     func createUntilDatePicker(){
         untilDatePicker.datePickerMode = .date
         untilDatePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
