@@ -223,7 +223,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let url = URL(string: joinURL)
         
         UIApplication.shared.open(url!)
-        
     }
     
     func createSinceDatePicker(){
@@ -283,6 +282,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         self.view.endEditing(true)
     }
-    
 }
 
